@@ -59,7 +59,33 @@ What we have just done is to configure an additional fourth network option for y
 
 > You may wonder why we didn't just use the existing Host-Only network. While we could have done that by changing its settings, it's generally a better idea to create a new virtual network when you are working with advanced networking scenarios. Even if you use Host-Only networking, VMware does still offer certain services by default, such as DHCP for IP address assignment. We will be providing DHCP ourselves as part of the project, so we have created a network such that VMware does not provide any network services at all to the network, nor does that network have any "connection" to the host itself. In a sense, this is even less than "host-only", it's "completely isolated".
 
+Now, jump to [Phase 3.1](#phase-31-installing-a-router-operating-system)
+
 ### Mac
+
+1. In VMware Fusion, open the "VMware Fusion" menu next to the Apple menu and choose Preferences.
+
+2. Choose the Network tab.
+
+    ![Mac VMware network settings main window](assets/ia1_p2_m_1.png)
+
+3. Click the Unlock icon at the bottom of the screen and enter your system password to access the networking settings.
+
+4. Click the `+` button at the bottom of the list of networks to add a new virtual interface.
+
+    You'll see a new network named `vmnet2` appear. Click on it.
+
+5. Configure the settings as follows:
+
+    * Uncheck "Allow virtual machines on this network to connect to external networks"
+    * Uncheck "Connect the host Mac to this network"
+    * Uncheck "Provide addresses on this network via DHCP"
+
+    ![Mac virtual network settings](assets/ia1_p2_m_2.png)
+
+6. Click Apply, and close the preferences window.
+
+Now you can go on to Phase 3.1!
 
 ## Phase 3.1: Installing a Router Operating System
 
@@ -130,7 +156,7 @@ Here are the specific instructions for each platform to get the new virtual mach
 
 15. Click Close. You'll be brought back to the VM creation summary screen. You can now finally click Finish.
 
-    Go on to Phase 3.2 to set up the router!
+    Go on to [Phase 3.2](#phase-32-configuring-the-router) to set up the router!
 
 ### Mac - Create a VM
 
@@ -183,7 +209,7 @@ Here are the specific instructions for each platform to get the new virtual mach
     ![CD/DVD settings view configured correctly](assets/ia1_p3_m_08.png)
 
 7. Close the VM settings window and go on to Phase 3.2!
-8. 
+
 ## Phase 3.2: Configuring the Router
 
 These instructions are very similar for Windows or Mac, with only one small variation which will be noted.
@@ -332,8 +358,9 @@ The good news is that this phase is pretty simple. **Follow the instructions in 
   * Windows: `Windows-ubuntu-24.04.1-noble-desktop-amd64.iso`
   * Mac: `Mac-ubuntu-24.04.1-noble-desktop-aarch64.iso`
 * Do **not** add the second network adapter. *Instead*, **change** the settings on the single network adapter to connect to your private network (`vmnet2` on Mac, or `CS306` if you're on Windows).
-* Set the RAM of the VM to at least 2GB (2048MB). If you don't do this, you'll find the VM sluggish and possibly unstable!
+* Set the RAM of the VM to at least 3GB (3072MB). If you don't do this, you'll find the VM sluggish and possibly unstable!
   * This can be done during or after setup in the VM settings.
+  * If you have *less than 8GB* of memory in your system, you may need to lower this to 2GB, but be warned you will experience lags in the VM.
 * Give the client VM a sensible name, such as "ubuntu client".
 
 After you have created your Ubuntu VM, start it up. Ubuntu will take some time to load, but eventually you should receive a desktop.
@@ -344,11 +371,11 @@ Proceed to the final phase - Phase 5!
 
 1. In your client VM, open a web browser. Firefox is preinstalled and easily found in the left icon bar.
 
-2. Type `http://<router-ip>:444` in the address bar.
+2. Type `http://<router-ip>:444` in the address bar. Replace `<router-ip>` with the IP address you gave to your router.
 
     You should receive a security warning - this is because the web configuration system runs on HTTPS, but there is no valid security certificate on the router. Since we're just connecting to a local service running in a lab environment, it is safe to override the error and proceed.
 
-    You should be prompted to log in to your router - **use `admin` as the username and the password you specified during the initial router setup in Phase 3B**.
+    You should be prompted to log in to your router - **use `admin` as the username and the password you specified during the initial router setup in Phase 3.2**.
 
 3. You should see the main router interface - congratulations!
 
