@@ -93,10 +93,9 @@ In general, I will use the following penalties for late assignments. Exceptions 
 Submitted | Maximum score
 --------- | -------------
 On Time | 100%
-1 day late | 85%
-2 days late | 75%
-3 days late | 65%
-4 days or more late | No credit
+1 day late | 80%
+2 days late | 60%
+3 days or more late | No credit
 
 Late submission days *include weekends*. (If an assignment is due on Friday at 11:59 PM, submitting on Monday counts as 3 days late!)
 
