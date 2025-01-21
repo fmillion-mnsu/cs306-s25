@@ -33,7 +33,7 @@ The instructions for configuring the networking system for our project differ de
 
     On Windows you'll need to click the "Change Settings" button to give yourself admin-level access to change the virtual network settings. You can tell if you have admin access because you'll see an additional "Bridged" network in the list - you can now see all three virtual networks used by VMware.
 
-2. We are going to add a new custom network to serve as our "internal" network. Click the "Add" button. You'll be asked to select a network to add - choose "VMnet2". 
+2. We are going to add a new custom network to serve as our "internal" network. Click the "Add" button. You'll be asked to select a network to add - choose "VMnet2".
 
     ![Image of Select Network to Add dialog](assets/ia1_p2_w_2.png)
 
@@ -55,7 +55,7 @@ The instructions for configuring the networking system for our project differ de
 
 5. Click OK to close the virtual network editor.
 
-What we have just done is to configure an additional fourth network option for your virtual machines' networking. 
+What we have just done is to configure an additional fourth network option for your virtual machines' networking.
 
 > You may wonder why we didn't just use the existing Host-Only network. While we could have done that by changing its settings, it's generally a better idea to create a new virtual network when you are working with advanced networking scenarios. Even if you use Host-Only networking, VMware does still offer certain services by default, such as DHCP for IP address assignment. We will be providing DHCP ourselves as part of the project, so we have created a network such that VMware does not provide any network services at all to the network, nor does that network have any "connection" to the host itself. In a sense, this is even less than "host-only", it's "completely isolated".
 
@@ -132,7 +132,7 @@ Here are the specific instructions for each platform to get the new virtual mach
 
 9. Leave "Network Address Translation" selected. Go to the next screen.
 
-10. Continue proceeding through the screens. Leave all of the screens regarding storage controllers and virtual disks at their default. 
+10. Continue proceeding through the screens. Leave all of the screens regarding storage controllers and virtual disks at their default.
 
     > 8 GB is the default size for unspecified Linux distributions in VMware. You could change this, but 8 GB is more than sufficient to contain the software needed to act as a router.
     >
@@ -144,13 +144,13 @@ Here are the specific instructions for each platform to get the new virtual mach
 
 12. In the Hardware window, click the Add button at the bottom of the hardware list. Select "Network Adapter" in the box that appears, and click Finish.
 
-13. In the list of hardware, select "Network Adapter 2". 
+13. In the list of hardware, select "Network Adapter 2".
 
     On the right panel, **choose the Custom option** for the network connection, and choose the "CS306" network you created as the network from the list.
 
     ![Network settings for Adapter 2 on Windows](assets/ia1_p3_w_06.png)
 
-14. Now, choose the CD/DVD drive. 
+14. Now, choose the CD/DVD drive.
 
     Select the "Use ISO Image" option on the right panel, and then click the Browse button and locate the IPFire installation ISO (`ipfire-2.29-core190-x86_64.iso`).
 
@@ -172,7 +172,7 @@ Here are the specific instructions for each platform to get the new virtual mach
 
     > The IPFire software router runs on Linux, hence why we tell VMware that we're building a Linux VM. Since IPFire is not a "standard" distribution (such as Ubuntu, Debian, etc.) we can use the "Other" option to set sensible defaults for a Linux-based VM.
 
-3. Use the defaults for the virtual disk. 
+3. Use the defaults for the virtual disk.
 
     ![Screenshot showing Virtual Disk settings put at default](assets/ia1_p3_m_03.png)
 
@@ -216,7 +216,7 @@ These instructions are very similar for Windows or Mac, with only one small vari
 
 1. Finally, start up the virtual machine.
 
-    If you see one of the following displays, press Enter to immediately boot into the installation. (It will start on its own if you don't.) 
+    If you see one of the following displays, press Enter to immediately boot into the installation. (It will start on its own if you don't.)
 
     ![VM starting up on Windows](assets/ia1_p3_w_08.png)
 
@@ -224,26 +224,26 @@ These instructions are very similar for Windows or Mac, with only one small vari
 
 2. Work through the installation. For most questions, you can accept the defaults. Select an appropriate language/localization option if it applies for you. Allow the installer to partition the disk automatically, selecting defaults.
 
-    > Hint: The setup program is keyboard-driven - mouse support may either be unstable or completely non-existent. Simply use your arrow keys and the Tab key to navigate the controls in the dialog boxes. Space will check checkboxes. 
+    > Hint: The setup program is keyboard-driven - mouse support may either be unstable or completely non-existent. Simply use your arrow keys and the Tab key to navigate the controls in the dialog boxes. Space will check checkboxes.
 
-3. Once you have completed installation, you will see this display. 
+3. Once you have completed installation, you will see this display.
 
     ![Final installation display](assets/ia1_p3_m_10.png)
 
     Once you choose Reboot, the VM will reboot into the router's initial setup wizard.
 
-4. When the router boots, you'll first see the boot menu. 
+4. When the router boots, you'll first see the boot menu.
 
     ![IPFire boot menu screen](assets/ia1_p3_01.png)
 
     Like with the setup program, you can either wait a few moments for the OS to boot, or you can press Enter to boot it immediately.
 
-5. Work through the initial questions in the first-setup wizard. For questions such as time zone, language, etc. select something appropriate for you. 
+5. Work through the initial questions in the first-setup wizard. For questions such as time zone, language, etc. select something appropriate for you.
 
     ![First screen in IPFire setup wizard](assets/ia1_p3_02.png)
 
     When asked to enter a domain name, **enter** `yourlastname.lan`. Obviously, replace `yourlastname` with your last name. Don't include any capitalization, hyphens or punctuation. Examples: `million.lan`, `omally.lan`, `mcdonaldsmith.lan`, etc.
-    
+
 6. Proceed **until** you are given the *Network Configuration* window, which prompts: "Current config: GREEN + RED". **STOP** on this screen and proceed to the next step.
 
     ![Network screen in IPFire setup wizard - STOP HERE](assets/ia1_p3_03.png)
@@ -266,8 +266,8 @@ These instructions are very similar for Windows or Mac, with only one small vari
     >
     > ![MAC address for a virtual network adapter on Windows](assets/ia1_p3_04_w.png)
 
-    > **Mac**: 
-    > 
+    > **Mac**:
+    >
     > Open the Virtual Machine settings by choosing Settings from the VM menu. (Alternatively, press Ctrl + &#x2318; to release input from the VM, then press &#x2318; + E.)
     >
     > Open the *second* network adapter ("Network Adapter 2", not "Network Adapter").
@@ -276,11 +276,11 @@ These instructions are very similar for Windows or Mac, with only one small vari
     >
     > ![MAC address for a virtual network adapter on Mac](assets/ia1_p3_04_m.png)
 
-8. Select "Drivers and card assignments". The GREEN network will be selected. 
+8. Select "Drivers and card assignments". The GREEN network will be selected.
 
     Press Enter on the network.
 
-    Select the network adapter that **matches the MAC address you noted in step 3.** 
+    Select the network adapter that **matches the MAC address you noted in step 3.**
 
     > IPFire uses the concept of colors to specify network "zones". The Green network is your internal, private local area network, while the Red network is your connection to the Internet.
 
@@ -295,26 +295,26 @@ These instructions are very similar for Windows or Mac, with only one small vari
 9. Choose "Address Settings" and click OK.
 
     Select the "GREEN" network and choose OK.
-    
-    On this screen, **you will assign a network address to your internal LAN.** 
+
+    On this screen, **you will assign a network address to your internal LAN.**
 
     The IP address should be either the first or last *usable* address in your subnet. For example, if you were to use `100.64.0.0/24` as your network and subnet, your router's IP should be `100.64.0.1`.
 
-    > **VERY IMPORTANT:** 
+    > **VERY IMPORTANT:**
     >
     > You must choose your **own** subnet. It must conform to the following characteristics:
     >
     > * It MUST be within one of the three valid IP address ranges for internal networks: `10.0.0.0/8`, `172.16.0.0/12` and `192.168.0.0/16`.
     > * It CANNOT be in the IP space that includes `192.168.0.x` or `192.168.1.x`. In other words, the extremely ubiquitous `192.168.1.1/24` is NOT permitted for this assignment.
     > * It MUST allow for at least 10 devices. You may choose the smallest possible network for this if you like, or you may choose a larger one. However, DO NOT just use "the whole private network" since you are very likely to "step on" the internal network addresses used on campus, which are dynamic and variable!
-    
+
     ![IP address entry screen](assets/ia1_p3_06.png)
 
     Enter your chosen IP address and the appropriate subnet mask. The subnet mask here is entered in traditional dot notation, not the CIDR representation. (Hint: chop your 32 bit subnet mask into four 8-bit binary values, convert them to decimal, and separate them by dots.)
 
     Choose OK.
 
-10. Now you'll configure the DHCP client, which will get an IP address in order to access the Internet. (In your case, "the Internet" is provided by a minimal router built into VMware.) 
+10. Now you'll configure the DHCP client, which will get an IP address in order to access the Internet. (In your case, "the Internet" is provided by a minimal router built into VMware.)
 
     Choose the "RED" interface.
 
@@ -324,13 +324,13 @@ These instructions are very similar for Windows or Mac, with only one small vari
 
     Finally, select "Done" to end the network configuration screen.
 
-11. Finally, you'll configure the DHCP *server*, which IPFire will use to give IP addresses to your "clients". 
+11. Finally, you'll configure the DHCP *server*, which IPFire will use to give IP addresses to your "clients".
 
     ![DHCP server configuration screen](assets/ia1_p3_08.png)
 
     Check the box to enable the DHCP server.
 
-    You now need to determine the IP address range you want your DHCP server to assign IP addresses within. 
+    You now need to determine the IP address range you want your DHCP server to assign IP addresses within.
 
     > **VERY IMPORTANT**
     >
@@ -391,7 +391,7 @@ Proceed to the final phase - Phase 5!
 
     In the IPFire web UI, choose "Domain Name System" under the Network menu.
 
-    **Uncheck** the box labeled "Use ISP-assigned DNS servers". 
+    **Uncheck** the box labeled "Use ISP-assigned DNS servers".
 
     ![DNS settings in IPFire Web UI](assets/ia1_p5_2.png)
 
@@ -422,7 +422,7 @@ For your Assignment 1 submission, you will submit:
 
 To get the configuration dump, see the previous section on [getting your config file](#submission-getting-your-configuration-file).
 
-This example shows the screenshot you need to submit. (IP addresses have been redacted - come up with your own valid private IP subnet!!) 
+This example shows the screenshot you need to submit. (IP addresses have been redacted - come up with your own valid private IP subnet!!)
 
 ![Sample main window screen shot](assets/ia1_s_3.png)
 
