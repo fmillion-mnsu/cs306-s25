@@ -99,6 +99,8 @@ In this section you'll start a service on your Ubuntu virtual machine and then t
   * For example, if you discovered that your router is at `192.168.55.100` and you forwarded port `8888`, you'd visit `http://192.168.55.100:8888`.
   * If everything worked, you should see the directory listing page in your browser *outside* of the VM!
 
+Press Ctrl+C to stop the Python web server.
+
 > In this context, accessing the VM from your main OS is akin to accessing the internal service through the firewall via the forwarded port. Since you are almost certainly behind a NAT to begin with, this will not actually open your server to the *actual* wider Internet. However, if you enacted this same setup on a router that is directly connected to the Internet - like your home router probably is - you *would* be opening access to the entire Internet.
 >
 > Be careful - exposing random services to the Internet can be dangerous!
@@ -106,6 +108,8 @@ In this section you'll start a service on your Ubuntu virtual machine and then t
 ## Deliverables
 
 Once you've completed *all three* phases, perform another configuration backup as you did in Assignment 1. Additionally, take a screenshot of accessing the Python server from *outside* the VM (i.e. through the forwarded port). It should be clear that the screenshot is not from inside the VM - ensure the address bar is visible.
+
+> Note that you should NOT undo any of the steps you took while performing the exercise. Leave the firewall rules and the DHCP assignment intact before saving your configuration.
 
 Your deliverables are:
 
