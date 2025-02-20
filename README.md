@@ -8,5 +8,7 @@
   * [Individual Assignment 1](I_ASSIGN1.md): Setting up a local router and client
   * [Individual Assignment 2](I_ASSIGN2.md): Configuring the Firewall
 * Group Assignments:
+  * [Group Assignment 1](G_ASSIGN1.md): Packet sniffing
   * [Capstone](G_ASSIGN2.md): Programming with Sockets
 * [Installing VMware](VMWARE.md)
+* [Accessing the CS 306 VPN](VPN.md)
