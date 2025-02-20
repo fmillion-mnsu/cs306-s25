@@ -16,11 +16,13 @@ All group members should perform these steps together.
 
 1. All group members **who are using Windows** will need to enable ping packets through the Windows Firewall.
 
-    Before starting the next steps, run this command at your command prompt:
+    Before starting the next steps, open an Administrator command prompt and run this command:
 
     `netsh advfirewall firewall set rule name="File and Printer Sharing (Echo Request - ICMPv4-In)" new enable=Yes`
 
     Feel free to copy/paste the command.
+
+    > Tip: Press Windows+R to bring up the Run dialog, type `cmd`, and press Ctrl+Shift+Enter. This is a shortcut that will run the command typed as administrator.
 
 1. Start Wireshark. Set it to capture on your WireGuard interface. It will be named with your StarID.
 
@@ -43,6 +45,8 @@ All group members should perform these steps together.
 > If you disabled the Windows Firewall rule that blocks pings, this command will turn that rule back on:
 >
 > `netsh advfirewall firewall set rule name="File and Printer Sharing (Echo Request - ICMPv4-In)" new enable=No`
+>
+> Remember that you need to run the command on an Administrator command prompt.
 
 ## If you have trouble
 
