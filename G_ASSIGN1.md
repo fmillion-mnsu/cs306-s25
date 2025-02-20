@@ -6,13 +6,21 @@ This simple packet sniffing exercise will both verify that you are able to commu
 
 All group members should perform these steps together.
 
-1. Install Wireshark - installers are available in the software repository link on D2L.
+1\. Install Wireshark - installers are available in the software repository link on D2L.
 
 1. Connect to the CS 306 VPN. See the [instructions](VPN.md) if you need assistance.
 
 1. Each member of your group should determine your VPN IP address - it's displayed in the WireGuard interface. Share your IP with your group members.
 
      ![WireGuard interface highlighting the client IP address](assets/ga1_1.png)
+
+1. All group members **who are using Windows** will need to enable ping packets through the Windows Firewall.
+
+    Before starting the next steps, run this command at your command prompt:
+
+    `netsh advfirewall firewall set rule name="File and Printer Sharing (Echo Request - ICMPv4-In)" new enable=Yes`
+
+    Feel free to copy/paste the command.
 
 1. Start Wireshark. Set it to capture on your WireGuard interface. It will be named with your StarID.
 
@@ -26,11 +34,21 @@ All group members should perform these steps together.
 
      ![Example of successful ping in Wireshark UI](assets/ga1_3.png)
 
-1. Once you've pinged *both* group members, stop the capture and *save the capture file* using your first name and last initial as the capture file name (e.g. `flintm.cap`).
+1. Once you've pinged *both* group members, **stop** the capture (under the Capture menu) and *save the capture file* using your first name and last initial as the capture file name (e.g. `flintm`). The file should get an extension of `.cap`, `.pcap`, or `.pcapng` - any is OK.
 
     > In the event that your group has two members with the same first name and same last initial, you can use your full last name in the filename, but do *not* include any separators - i.e. `flintmillion`, not `flint-million`, `flint_million`, `flint.million` etc.
 
 1. Have one group member collect the capture files for each group member and submit the files to the D2L dropbox for your group as one submission.
+
+> If you disabled the Windows Firewall rule that blocks pings, this command will turn that rule back on:
+>
+> `netsh advfirewall firewall set rule name="File and Printer Sharing (Echo Request - ICMPv4-In)" new enable=No`
+
+## If you have trouble
+
+If you are finding that you cannot ping a group member *but that group member* ***can*** *ping you*, then it suggests that person might have a restrictive firewall installed on their computer.
+
+Check if you have any extra firewall applications installed other than the default built-in system firewall. If so, disable those firewall applications *temporarily* during the assignment.
 
 ## Submission
 
