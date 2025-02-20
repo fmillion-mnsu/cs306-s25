@@ -13,7 +13,10 @@ For this course, you have been given access to a WireGuard VPN instance that wil
 
 1. Install the WireGuard profile into your client - click "Add Tunnel" and select the downloaded profile
 
+     ![Image highlighting the Add Tunnel button in WireGuard's UI](assets/vpn_wg.png)
+
 1. Click "Activate" to connect to the VPN.
 
 1. To verify that the VPN is functional, visit <http://10.36.0.1> in a web browser. If you are successful you will see a confirmation page - congratulations!
 
+    ![Image showing the success webpage](assets/vpn_website.png)

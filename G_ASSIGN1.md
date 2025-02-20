@@ -12,11 +12,19 @@ All group members should perform these steps together.
 
 1. Each member of your group should determine your VPN IP address - it's displayed in the WireGuard interface. Share your IP with your group members.
 
-1. Start Wireshark. Set it to capture on your WireGuard interface.
+     ![WireGuard interface highlighting the client IP address](assets/ga1_1.png)
+
+1. Start Wireshark. Set it to capture on your WireGuard interface. It will be named with your StarID.
+
+     ![Selecting the WireGuard interface](assets/ga1_2.png)
 
 1. Use the `ping` command to ping both of your group member's IP addresses. **You should see both the ping and the ping reply in the Wireshark capture log.** It is OK if other packets appear - this is normal, as network stacks are pretty "chatty" on their own.
 
     > Windows will only send four ping packets before exiting. Mac and Linux machines will ping forever until you stop the ping program by pressing Ctrl+C.
+
+    Here is an example of a successful ping:
+
+     ![Example of successful ping in Wireshark UI](assets/ga1_3.png)
 
 1. Once you've pinged *both* group members, stop the capture and *save the capture file* using your first name and last initial as the capture file name (e.g. `flintm.cap`).
 
